@@ -1,0 +1,25 @@
+.container {
+    max-width: 338px;
+    padding: 1rem 4rem;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0;
+    }
+
+    .container>div:first-child {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container>div:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container>div:last-child>p {
+        text-align: center;
+    }
+}

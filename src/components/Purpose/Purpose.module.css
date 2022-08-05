@@ -1,0 +1,34 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem 4rem 4rem;
+}
+
+.block>div:last-child {
+    display: flex;
+    align-items: center;
+}
+
+.steps {
+    max-width: 469px;
+}
+
+.steps>div:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 930px) {
+    .block {
+        padding: 6rem 1rem 4rem;
+    }
+
+    .block>div:last-child {
+        flex-direction: column;
+    }
+
+    .steps>div:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+}
