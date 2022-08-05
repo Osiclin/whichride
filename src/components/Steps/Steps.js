@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export default function Steps({ step, title, description, bgColor }) {
     const {ref, inView} = useInView({threshold: 0.3})
     const animation = useAnimation()
+    const [animate, setAnimate] = useState(true)
 
     useEffect(() => {
         if(inView) {
@@ -17,8 +18,9 @@ export default function Steps({ step, title, description, bgColor }) {
                     delay: .2
                 }
             })
+            setAnimate(false)
         }
-        if(!inView) {
+        if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
                 translateY: "50px",

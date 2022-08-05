@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export default function WhyCard({ title, description, icon }) {
     const {ref, inView} = useInView({threshold: 0.2})
     const animation = useAnimation()
+    const [animate, setAnimate] = useState(true)
 
     useEffect(() => {
         if(inView) {
@@ -17,8 +18,9 @@ export default function WhyCard({ title, description, icon }) {
                     delay: .2
                 }
             })
+            setAnimate(false)
         }
-        if(!inView) {
+        if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
                 translateX: "-100px",

@@ -3,11 +3,12 @@ import Wrapper from "../Wrapper/Wrapper"
 import styles from "./Why.module.css"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Why() {
     const {ref, inView} = useInView({threshold: 0.2})
     const animation = useAnimation()
+    const [animate, setAnimate] = useState(true)
 
     useEffect(() => {
         if(inView) {
@@ -19,8 +20,9 @@ export default function Why() {
                     delay: .3
                 }
             })
+            setAnimate(false)
         }
-        if(!inView) {
+        if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
                 scale: .8,
@@ -41,7 +43,10 @@ export default function Why() {
                         <motion.h2
                             ref={ref}
                             animate={animation} 
-                            style={{ textAlign: "center", marginBottom: "3rem" }}>Why Whichride</motion.h2>
+                            style={{ textAlign: "center", marginBottom: "3rem" }}
+                        >
+                            Why Whichride
+                        </motion.h2>
                     </div>
                     <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
                         <WhyCard

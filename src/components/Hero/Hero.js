@@ -3,11 +3,12 @@ import styles from "./Hero.module.css"
 import hero from "../../assets/images/hero.png"
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
     const {ref, inView} = useInView({threshold: 0.2})
     const animation = useAnimation()
+    const [animate, setAnimate] = useState(true)
 
     useEffect(() => {
         if(inView) {
@@ -19,8 +20,9 @@ export default function Hero() {
                     delay: .3
                 }
             })
+            setAnimate(false)
         }
-        if(!inView) {
+        if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
                 scale: .8,
@@ -50,6 +52,7 @@ export default function Hero() {
 const Img = () => {
     const {ref, inView} = useInView({threshold: 0.4})
     const animation = useAnimation()
+    const [animate, setAnimate] = useState(true)
 
     useEffect(() => {
         if(inView) {
@@ -61,8 +64,9 @@ const Img = () => {
                     delay: .5
                 }
             })
+            setAnimate(false)
         }
-        if(!inView) {
+        if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
                 translateX: "100px",
@@ -86,6 +90,7 @@ const Img = () => {
 const Para= () => {
     const {ref, inView} = useInView({threshold: 0.2})
     const animation = useAnimation()
+    const [animate, setAnimate] = useState(true)
 
     useEffect(() => {
         if(inView) {
@@ -97,8 +102,9 @@ const Para= () => {
                     delay: .5
                 }
             })
+            setAnimate(false)
         }
-        if(!inView) {
+        if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
                 translateY: "30px",

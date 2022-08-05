@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function Footer() {
     const {ref, inView} = useInView({threshold: 0.2})
     const animation = useAnimation()
+    const [animate, setAnimate] = useState(true)
 
     useEffect(() => {
         if(inView) {
@@ -18,8 +19,9 @@ export default function Footer() {
                     delay: .3
                 }
             })
+            setAnimate(false)
         }
-        if(!inView) {
+        if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
                 scale: .8,
