@@ -13,7 +13,6 @@
 @media screen and (max-width: 1000px) {
     .block {
         flex-direction: column;
-        margin-top: 3rem;
     }
 
     .block>div:first-child {

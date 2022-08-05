@@ -79,7 +79,7 @@ export default function Purpose() {
 }
 
 const Img = () => {
-    const {ref, inView} = useInView({threshold: 0.2})
+    const {ref, inView} = useInView({threshold: 0.4})
     const imgAnimation = useAnimation()
     const [animate, setAnimate] = useState(true)
 
