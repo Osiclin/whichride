@@ -43,3 +43,9 @@
         padding: 0 1rem;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .block>div:last-child {
+        padding: 0 3rem;
+    }
+}
