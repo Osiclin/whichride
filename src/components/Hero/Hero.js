@@ -17,7 +17,8 @@ export default function Hero() {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                    delay: .3
+                    delay: .3,
+                    duration: .4
                 }
             })
             setAnimate(false)
@@ -25,7 +26,7 @@ export default function Hero() {
         if(!inView && animate) {
             animation.start({
                 visibility: "hidden",
-                scale: .8,
+                scale: 0,
                 opacity: 0
             })
         }
@@ -61,7 +62,8 @@ const Img = () => {
                 translateX: 0,
                 opacity: 1,
                 transition: {
-                    delay: .5
+                    delay: 1.2,
+                    duration: .5
                 }
             })
             setAnimate(false)
@@ -99,7 +101,8 @@ const Para= () => {
                 translateY: 0,
                 opacity: 1,
                 transition: {
-                    delay: .5
+                    delay: .8,
+                    duration: .4
                 }
             })
             setAnimate(false)

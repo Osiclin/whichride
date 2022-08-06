@@ -16,7 +16,8 @@ export default function Footer() {
                 scale: 1,
                 opacity: 1,
                 transition: {
-                    delay: .3
+                    delay: .3,
+                    duration: .4
                 }
             })
             setAnimate(false)

@@ -15,7 +15,8 @@ export default function Steps({ step, title, description, bgColor }) {
                 translateY: 0,
                 opacity: 1,
                 transition: {
-                    delay: .2
+                    delay: .2,
+                    duration: .3
                 }
             })
             setAnimate(false)

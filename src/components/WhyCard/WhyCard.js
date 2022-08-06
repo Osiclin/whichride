@@ -15,7 +15,8 @@ export default function WhyCard({ title, description, icon }) {
                 translateX: 0,
                 opacity: 1,
                 transition: {
-                    delay: .2
+                    delay: .2,
+                    duration: .4
                 }
             })
             setAnimate(false)
